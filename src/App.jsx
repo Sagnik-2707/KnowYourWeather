@@ -1,5 +1,6 @@
 import React,{ useEffect, useState } from 'react'
 import './App.css';
+import Banner from './components/Banner';
 function App() {
   const API_KEY = '9e8b88202a38eb386defccad33535aa0';
   const [weather, setWeather] = useState(null);
@@ -42,7 +43,9 @@ function App() {
   }
 };
   return (
-      
+
+    <div>
+      <Banner/>  
       <div class = "main-box">
         {console.log('The city is', city)}
         <input type="text" placeholder="Enter city here" class="center-input" value={city} onChange={handleChange}></input>
@@ -57,6 +60,7 @@ function App() {
         </div>)
         }
       </div>
+    </div>
       
   );
 }   
