@@ -5,14 +5,16 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState('');
   const [city, setCity] = useState('');
+  const[showResult, setShowResult] = useState(false);
   useEffect(() => {
-    const savedCity = localStorage.getItem('city');
-    const savedWeather = localStorage.getItem('weather');
+    // const savedCity = localStorage.getItem('city');
+    // const savedWeather = localStorage.getItem('weather');
 
-    if(savedCity)
-      setCity(savedCity);
-    if(savedWeather)
-      setWeather(JSON.parse(savedWeather));
+    // if(savedCity)
+    //   setCity(savedCity);
+    // if(savedWeather)
+    //   setWeather(JSON.parse(savedWeather));
+    setShowResult(false);
   }, []);
 
   const handleChange = (e) => {
@@ -29,6 +31,7 @@ function App() {
     const data = await(response.json());
     setWeather(data);
     setError('');
+    setShowResult(true);
     localStorage.setItem('city', city);
     localStorage.setItem('weather', JSON.stringify(weather));
   }
@@ -45,12 +48,14 @@ function App() {
         <input type="text" placeholder="Enter city here" class="center-input" value={city} onChange={handleChange}></input>
         <br/> <br/>
         <button onClick={fetchWeather}>Get Weather</button>
+        {showResult &&(
         <div> 
           <p>Temperature : {weather?.main?.temp} °C</p>
           <p>Conditions : {weather?.weather[0]?.description}</p>
           <p>Wind Speed: {weather?.wind?.speed}m/s</p>
           <p>Humidity: {weather?.main?.humidity}%</p>
-        </div>
+        </div>)
+        }
       </div>
       
   );

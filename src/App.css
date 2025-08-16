@@ -5,36 +5,3 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: white;
-}
-
-/* Center the main box */
-.main-box {
-  height: 300px;
-  width: 500px;
-  background-color: rgb(169, 169, 247);
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: auto;
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-}
-
-/* Style the search input */
-.main-box input {
-  width: 70%;
-  padding: 14px 20px;
-  font-size: 18px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-}
