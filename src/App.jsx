@@ -45,7 +45,8 @@ function App() {
   return (
 
     <div>
-      <Banner/>  
+      <Banner/> 
+      <div className="logo">KnowYourWeather</div>
       <div class = "main-box">
         {console.log('The city is', city)}
         <input type="text" placeholder="Enter city here" class="center-input" value={city} onChange={handleChange}></input>
