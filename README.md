@@ -28,7 +28,6 @@ Just enter the **name of the city** and instantly get real-time weather updates 
 - 📜 **JavaScript (ES6+)**  
 - 🎨 **CSS3**  
 - ☁️ **OpenWeatherMap API**  
-- 🟢 **Node.js**  
 
 ---
 
